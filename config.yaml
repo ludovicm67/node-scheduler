@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=./src/schema.json
+
+# A process is something that is automatically started and runs continuously
+processes:
+  process:
+    cmd: ./scripts/process.sh
+    logs:
+      stdout: ./logs/process_stdout.log
+      stderr: ./logs/process_stderr.log
+
+# A task is something that runs once and then stops
+# It should be started manually when needed using a HTTP request or through a schedule
+tasks:
+  task:
+    cmd: ./scripts/task.sh
+    logs:
+      stdout: ./logs/task_stdout.log
+      stderr: ./logs/task_stderr.log
+
+  scheduled_task:
+    cmd: ./scripts/scheduled_task.sh
+    logs:
+      stdout: ./logs/scheduled_task.log
+      stderr: ./logs/scheduled_task.log
+
+# A schedule is a periodic trigger to start a task
+schedules:
+  run_scheduled_task:
+    cron: "*/2 * * * *"
+    task: scheduled_task

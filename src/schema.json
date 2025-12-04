@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "processes": {
+      "description": "Processes to run continuously",
+      "type": "object",
+      "propertyNames": {
+        "description": "A unique name for the item",
+        "type": "string",
+        "minLength": 1
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "cmd": {
+            "description": "The command to execute",
+            "type": "string"
+          },
+          "args": {
+            "description": "Arguments to pass to the command",
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "restart": {
+            "description": "Whether to restart the process if it exits (default: true)",
+            "default": true,
+            "type": "boolean"
+          },
+          "unique": {
+            "description": "Whether only one instance of the job can run at a time",
+            "default": true,
+            "type": "boolean"
+          },
+          "logs": {
+            "description": "Log file paths for the job",
+            "type": "object",
+            "properties": {
+              "stdout": {
+                "description": "Path to the standard output log file",
+                "type": "string"
+              },
+              "stderr": {
+                "description": "Path to the standard error log file",
+                "type": "string"
+              }
+            },
+            "required": [
+              "stdout",
+              "stderr"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "cmd",
+          "logs"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "tasks": {
+      "description": "One-off tasks to run",
+      "type": "object",
+      "propertyNames": {
+        "description": "A unique name for the item",
+        "type": "string",
+        "minLength": 1
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "cmd": {
+            "description": "The command to execute",
+            "type": "string"
+          },
+          "args": {
+            "description": "Arguments to pass to the command",
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "restart": {
+            "description": "Whether to restart the task if it exits (default: false)",
+            "default": false,
+            "type": "boolean"
+          },
+          "unique": {
+            "description": "Whether only one instance of the job can run at a time",
+            "default": true,
+            "type": "boolean"
+          },
+          "logs": {
+            "description": "Log file paths for the job",
+            "type": "object",
+            "properties": {
+              "stdout": {
+                "description": "Path to the standard output log file",
+                "type": "string"
+              },
+              "stderr": {
+                "description": "Path to the standard error log file",
+                "type": "string"
+              }
+            },
+            "required": [
+              "stdout",
+              "stderr"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "cmd",
+          "logs"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "schedules": {
+      "description": "Scheduled tasks",
+      "type": "object",
+      "propertyNames": {
+        "description": "A unique name for the item",
+        "type": "string",
+        "minLength": 1
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "cron": {
+            "description": "Cron expression for scheduling",
+            "type": "string"
+          },
+          "task": {
+            "description": "Name of the task to run",
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "cron",
+          "task"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "processes",
+    "tasks",
+    "schedules"
+  ],
+  "additionalProperties": false
+}
