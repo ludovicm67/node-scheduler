@@ -2,13 +2,28 @@
 
 import express from "express";
 import cron from "node-cron";
+import { Command } from "commander";
 import { logger } from "./lib/logger.ts";
 import { loadConfig } from "./lib/config.ts";
 import { killJob, startProcess, startTask } from "./lib/process.ts";
 
-const CONFIG_PATH = "./config.yaml";
+const DEFAULT_CONFIG_PATH = "./scheduler-config.yaml";
 
-const config = await loadConfig(CONFIG_PATH);
+const program = new Command();
+program
+  .option(
+    "-c, --config <path>",
+    "Path to the configuration YAML file",
+    DEFAULT_CONFIG_PATH
+  )
+  .parse(process.argv);
+
+const options = program.opts();
+const configPath = options.config as string;
+
+logger.debug(`Loading configuration from: ${configPath}`);
+
+const config = await loadConfig(configPath);
 const { processes, tasks, schedules } = config;
 
 // Configure server
