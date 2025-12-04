@@ -20,6 +20,10 @@
   "keywords": [
     "scheduler"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ludovicm67/node-scheduler.git"
+  },
   "author": {
     "name": "Ludovic Muller",
     "url": "https://ludovic-muller.fr/"
