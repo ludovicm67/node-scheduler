@@ -7,7 +7,8 @@ import { logger } from "./lib/logger.ts";
 import { loadConfig } from "./lib/config.ts";
 import { killJob, startProcess, startTask } from "./lib/process.ts";
 
-const DEFAULT_CONFIG_PATH = "./scheduler-config.yaml";
+const DEFAULT_CONFIG_PATH =
+  process.env.SCHEDULER_CONFIG_PATH || "./scheduler-config.yaml";
 
 const program = new Command();
 program
