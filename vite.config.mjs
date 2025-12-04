@@ -31,15 +31,14 @@ export default defineConfig({
   },
   plugins: [
     {
-      name: "dts-imports-to-js",
-      enforce: "post",
+      name: 'add-shebang',
       generateBundle (_, bundle) {
         for (const file of Object.values(bundle)) {
-          if (file.type === "asset" && file.fileName.endsWith(".d.ts")) {
-            file.source = file.source.replace(/\.ts(["';])/g, ".js$1");
+          if (file.type === 'chunk' && file.fileName === 'index.js') {
+            file.code = '#!/usr/bin/env node\n' + file.code;
           }
         }
-      },
-    },
+      }
+    }
   ],
 });
