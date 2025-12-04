@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import express from "express";
 import cron from "node-cron";
 import { logger } from "./lib/logger.ts";

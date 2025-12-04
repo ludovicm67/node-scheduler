@@ -1,6 +1,7 @@
-import { defineConfig } from "vite";
 import path from "node:path";
 import { builtinModules } from "node:module";
+import { defineConfig } from "vite";
+import { viteStaticCopy } from "vite-plugin-static-copy";
 import pkg from "./package.json" with { type: "json" };
 
 const externalDeps = [
@@ -30,15 +31,13 @@ export default defineConfig({
     sourcemap: false,
   },
   plugins: [
-    {
-      name: 'add-shebang',
-      generateBundle (_, bundle) {
-        for (const file of Object.values(bundle)) {
-          if (file.type === 'chunk' && file.fileName === 'index.js') {
-            file.code = '#!/usr/bin/env node\n' + file.code;
-          }
-        }
-      }
-    }
+    viteStaticCopy({
+      targets: [
+        {
+          src: "src/schema.json",
+          dest: ".",
+        },
+      ],
+    }),
   ],
 });
