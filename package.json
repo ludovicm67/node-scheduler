@@ -2,16 +2,30 @@
   "name": "@ludovicm67/scheduler",
   "version": "0.1.0",
   "description": "A simple Node.js based tasks and services scheduler",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "type": "module",
+  "bin": {
+    "cli": "./dist/index.js"
+  },
   "scripts": {
     "start": "node src/index.ts",
+    "build": "rm -rf dist && tsc && vite build && chmod +x dist/index.js && node fixTypes.mjs",
+    "prepack": "npm run build",
     "postinstall": "npm run update-schema",
     "update-schema": "node src/scripts/update-schema.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "scheduler"
+  ],
+  "author": {
+    "name": "Ludovic Muller",
+    "url": "https://ludovic-muller.fr/"
+  },
+  "files": [
+    "dist"
+  ],
   "license": "Apache-2.0",
   "dependencies": {
     "express": "^5.2.1",
@@ -23,6 +37,8 @@
     "zod": "^4.1.13"
   },
   "devDependencies": {
-    "@types/express": "^5.0.6"
+    "@types/express": "^5.0.6",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.6"
   }
 }
