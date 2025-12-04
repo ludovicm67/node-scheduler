@@ -38,6 +38,7 @@
     "zod": "^4.1.13"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.29.8",
     "@types/express": "^5.0.6",
     "typescript": "^5.9.3",
     "vite": "^7.2.6",
