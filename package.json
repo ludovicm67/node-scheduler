@@ -14,6 +14,7 @@
     "prepack": "npm run build",
     "update-schema": "node src/scripts/update-schema.ts",
     "fix-types": "node src/scripts/fix-types.ts",
+    "release": "changeset publish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
