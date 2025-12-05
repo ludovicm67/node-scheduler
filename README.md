@@ -21,3 +21,7 @@ It should be started manually when needed using a HTTP request or through a sche
 
 A schedule is a way to run tasks automatically at specific times or intervals, without manual intervention.
 Schedules are defined using cron syntax.
+
+## License
+
+Simple Whiteboard is licensed under the [Apache-2.0 license](./LICENSE).
