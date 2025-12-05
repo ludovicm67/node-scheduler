@@ -1,5 +1,7 @@
 # Node scheduler
 
+[![NPM](https://badge.fury.io/js/@ludovicm67%2Fscheduler.svg)](https://npm.im/@ludovicm67/scheduler)
+
 > A simple Node.js based tasks and services scheduler.
 
 ## Concepts
