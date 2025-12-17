@@ -1,6 +1,6 @@
 {
   "name": "@ludovicm67/scheduler",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A simple Node.js based tasks and services scheduler",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
