@@ -151,10 +151,5 @@
       }
     }
   },
-  "required": [
-    "processes",
-    "tasks",
-    "schedules"
-  ],
   "additionalProperties": false
 }

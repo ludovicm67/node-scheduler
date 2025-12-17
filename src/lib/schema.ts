@@ -53,15 +53,21 @@ export const ScheduleSchema = z.object({
 
 // Top-level config
 export const ConfigSchema = z.object({
-  processes: z.record(ItemNameSchema, ProcessSchema).meta({
-    description: "Processes to run continuously",
-  }),
-  tasks: z.record(ItemNameSchema, TaskSchema).meta({
-    description: "One-off tasks to run",
-  }),
-  schedules: z.record(ItemNameSchema, ScheduleSchema).meta({
-    description: "Scheduled tasks",
-  }),
+  processes: z.optional(
+    z.record(ItemNameSchema, ProcessSchema).meta({
+      description: "Processes to run continuously",
+    })
+  ),
+  tasks: z.optional(
+    z.record(ItemNameSchema, TaskSchema).meta({
+      description: "One-off tasks to run",
+    })
+  ),
+  schedules: z.optional(
+    z.record(ItemNameSchema, ScheduleSchema).meta({
+      description: "Scheduled tasks",
+    })
+  ),
 });
 
 // Export types
