@@ -40,4 +40,4 @@ It defaults to `info`, but you can set it to `debug`, `warn`, `error`, etc. depe
 
 ## License
 
-Simple Whiteboard is licensed under the [Apache-2.0 license](./LICENSE).
+Node scheduler is licensed under the [Apache-2.0 license](./LICENSE).
