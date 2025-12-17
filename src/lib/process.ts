@@ -31,6 +31,7 @@ const createProcess = (cmd: string, args: string[] = []) => {
   logger.debug(`Spawning process: ${cmd} ${args.join(" ")}`);
   return spawn(cmd, args, {
     stdio: ["ignore", "pipe", "pipe"],
+    detached: true,
   });
 };
 
@@ -76,12 +77,24 @@ export const killJob = (kind: JobKind, name: string, id?: string) => {
   }
 
   processesToKill.forEach((proc) => {
-    if (!proc.process) {
-      return;
-    }
-    if (!proc.process.killed) {
-      proc.process.kill("SIGTERM");
+    const pid = proc.process?.pid;
+    if (!pid) return;
+
+    try {
+      // Kill the entire process group
+      process.kill(-pid, "SIGTERM");
       logger.debug(`Killed job ${kind}/${name} (ID: ${proc.id})`);
+    } catch (err: any) {
+      if (err.code !== "ESRCH") {
+        logger.error(
+          `Error killing job ${kind}/${name} (ID: ${proc.id}): ${err}`
+        );
+      } else {
+        // ESRCH = process already exited
+        logger.debug(
+          `Job ${kind}/${name} (ID: ${proc.id}) already exited before kill`
+        );
+      }
     }
   });
 
