@@ -25,7 +25,14 @@ const configPath = options.config as string;
 logger.debug(`Loading configuration from: ${configPath}`);
 
 const config = await loadConfig(configPath);
-const { processes, tasks, schedules } = config;
+const {
+  processes: processesFromConfig,
+  tasks: tasksFromConfig,
+  schedules: schedulesFromConfig,
+} = config;
+const processes = processesFromConfig || {};
+const tasks = tasksFromConfig || {};
+const schedules = schedulesFromConfig || {};
 
 // Configure server
 const app = express();
