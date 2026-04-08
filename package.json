@@ -47,7 +47,7 @@
     "@types/express": "^5.0.6",
     "typescript": "^5.9.3",
     "vite": "^8.0.1",
-    "vite-plugin-static-copy": "^3.1.4"
+    "vite-plugin-static-copy": "^4.0.1"
   },
   "publishConfig": {
     "access": "public",
