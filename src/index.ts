@@ -7,6 +7,8 @@ import { logger } from "./lib/logger.ts";
 import { loadConfig } from "./lib/config.ts";
 import { killJob, startProcess, startTask } from "./lib/process.ts";
 
+export * as schema from "./lib/schema.ts";
+
 const DEFAULT_CONFIG_PATH =
   process.env.SCHEDULER_CONFIG_PATH || "./scheduler-config.yaml";
 
@@ -15,7 +17,7 @@ program
   .option(
     "-c, --config <path>",
     "Path to the configuration YAML file",
-    DEFAULT_CONFIG_PATH
+    DEFAULT_CONFIG_PATH,
   )
   .parse(process.argv);
 
@@ -84,17 +86,17 @@ for (const [scheduleName, schedule] of Object.entries(schedules)) {
   const task = tasks[taskName];
   if (!task) {
     logger.error(
-      `Task '${taskName}' not found for scheduling (from '${scheduleName}' schedule).`
+      `Task '${taskName}' not found for scheduling (from '${scheduleName}' schedule).`,
     );
     continue;
   }
 
   logger.info(
-    `Scheduling task '${taskName}' with cron expression '${cronExpr}' (from '${scheduleName}' schedule)`
+    `Scheduling task '${taskName}' with cron expression '${cronExpr}' (from '${scheduleName}' schedule)`,
   );
   cron.schedule(cronExpr, () => {
     logger.info(
-      `Executing scheduled task: ${taskName} (from schedule '${scheduleName}')`
+      `Executing scheduled task: ${taskName} (from schedule '${scheduleName}')`,
     );
     startTask(taskName, task);
   });
