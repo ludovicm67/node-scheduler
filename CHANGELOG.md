@@ -1,5 +1,11 @@
 # @ludovicm67/scheduler
 
+## 0.2.2
+
+### Patch Changes
+
+- 028ab5a: Switch to pnpm and upgrade dependencies
+
 ## 0.2.1
 
 ### Patch Changes
