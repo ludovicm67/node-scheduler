@@ -12,5 +12,7 @@
     "strict": true,
     "declaration": true,
     "skipLibCheck": true
-  }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["tests/**/*"]
 }

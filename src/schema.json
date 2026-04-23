@@ -3,19 +3,18 @@
   "type": "object",
   "properties": {
     "processes": {
-      "description": "Processes to run continuously",
       "type": "object",
       "propertyNames": {
-        "description": "A unique name for the item",
         "type": "string",
-        "minLength": 1
+        "minLength": 1,
+        "description": "A unique name for the item"
       },
       "additionalProperties": {
         "type": "object",
         "properties": {
           "cmd": {
-            "description": "The command to execute",
-            "type": "string"
+            "type": "string",
+            "description": "The command to execute"
           },
           "args": {
             "description": "Arguments to pass to the command",
@@ -36,23 +35,23 @@
             "type": "boolean"
           },
           "logs": {
-            "description": "Log file paths for the job",
             "type": "object",
             "properties": {
               "stdout": {
-                "description": "Path to the standard output log file",
-                "type": "string"
+                "type": "string",
+                "description": "Path to the standard output log file"
               },
               "stderr": {
-                "description": "Path to the standard error log file",
-                "type": "string"
+                "type": "string",
+                "description": "Path to the standard error log file"
               }
             },
             "required": [
               "stdout",
               "stderr"
             ],
-            "additionalProperties": false
+            "additionalProperties": false,
+            "description": "Log file paths for the job"
           }
         },
         "required": [
@@ -60,22 +59,22 @@
           "logs"
         ],
         "additionalProperties": false
-      }
+      },
+      "description": "Processes to run continuously"
     },
     "tasks": {
-      "description": "One-off tasks to run",
       "type": "object",
       "propertyNames": {
-        "description": "A unique name for the item",
         "type": "string",
-        "minLength": 1
+        "minLength": 1,
+        "description": "A unique name for the item"
       },
       "additionalProperties": {
         "type": "object",
         "properties": {
           "cmd": {
-            "description": "The command to execute",
-            "type": "string"
+            "type": "string",
+            "description": "The command to execute"
           },
           "args": {
             "description": "Arguments to pass to the command",
@@ -96,23 +95,23 @@
             "type": "boolean"
           },
           "logs": {
-            "description": "Log file paths for the job",
             "type": "object",
             "properties": {
               "stdout": {
-                "description": "Path to the standard output log file",
-                "type": "string"
+                "type": "string",
+                "description": "Path to the standard output log file"
               },
               "stderr": {
-                "description": "Path to the standard error log file",
-                "type": "string"
+                "type": "string",
+                "description": "Path to the standard error log file"
               }
             },
             "required": [
               "stdout",
               "stderr"
             ],
-            "additionalProperties": false
+            "additionalProperties": false,
+            "description": "Log file paths for the job"
           }
         },
         "required": [
@@ -120,27 +119,27 @@
           "logs"
         ],
         "additionalProperties": false
-      }
+      },
+      "description": "One-off tasks to run"
     },
     "schedules": {
-      "description": "Scheduled tasks",
       "type": "object",
       "propertyNames": {
-        "description": "A unique name for the item",
         "type": "string",
-        "minLength": 1
+        "minLength": 1,
+        "description": "A unique name for the item"
       },
       "additionalProperties": {
         "type": "object",
         "properties": {
           "cron": {
-            "description": "Cron expression for scheduling",
-            "type": "string"
+            "type": "string",
+            "description": "Cron expression for scheduling"
           },
           "task": {
-            "description": "Name of the task to run",
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "description": "Name of the task to run"
           }
         },
         "required": [
@@ -148,7 +147,8 @@
           "task"
         ],
         "additionalProperties": false
-      }
+      },
+      "description": "Scheduled tasks"
     }
   },
   "additionalProperties": false
