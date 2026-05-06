@@ -41,16 +41,16 @@ importers:
         version: 5.0.6
       knip:
         specifier: ^6.6.2
-        version: 6.8.0(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)
+        version: 6.12.0(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)
       typescript:
         specifier: ^6.0.3
         version: 6.0.3
       vite:
         specifier: ^8.0.10
-        version: 8.0.10(@types/node@25.6.0)(jiti@2.6.1)(yaml@2.8.3)
+        version: 8.0.10(@types/node@25.6.0)(jiti@2.7.0)(yaml@2.8.3)
       vite-plugin-static-copy:
         specifier: ^4.1.0
-        version: 4.1.0(vite@8.0.10(@types/node@25.6.0)(jiti@2.6.1)(yaml@2.8.3))
+        version: 4.1.0(vite@8.0.10(@types/node@25.6.0)(jiti@2.7.0)(yaml@2.8.3))
 
 packages:
 
@@ -497,8 +497,8 @@ packages:
   '@rolldown/pluginutils@1.0.0-rc.17':
     resolution: {integrity: sha512-n8iosDOt6Ig1UhJ2AYqoIhHWh/isz0xpicHTzpKBeotdVsTEcxsSA/i3EVM7gQAj0rU27OLAxCjzlj15IWY7bg==}
 
-  '@tybys/wasm-util@0.10.1':
-    resolution: {integrity: sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg==}
+  '@tybys/wasm-util@0.10.2':
+    resolution: {integrity: sha512-RoBvJ2X0wuKlWFIjrwffGw1IqZHKQqzIchKaadZZfnNpsAYp2mM0h36JtPCjNDAHGgYez/15uMBpfGwchhiMgg==}
 
   '@types/body-parser@1.19.6':
     resolution: {integrity: sha512-HLFeCYgz89uk22N5Qg3dvGvsv46B8GLvKKo1zKG4NybA8U2DiEO3w9lqGg29t/tfLRJpJ6iQxnVw4OnB7MoM9g==}
@@ -858,8 +858,8 @@ packages:
   isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
 
-  jiti@2.6.1:
-    resolution: {integrity: sha512-ekilCSN1jwRvIbgeg/57YFh8qQDNbwDb9xT/qu2DAHbFFZUicIl4ygVaAvzveMhMVr3LnpSKTNnwt8PoOfmKhQ==}
+  jiti@2.7.0:
+    resolution: {integrity: sha512-AC/7JofJvZGrrneWNaEnJeOLUx+JlGt7tNa0wZiRPT4MY1wmfKjt2+6O2p2uz2+skll8OZZmJMNqeke7kKbNgQ==}
     hasBin: true
 
   joycon@3.1.1:
@@ -877,8 +877,8 @@ packages:
   jsonfile@4.0.0:
     resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
 
-  knip@6.8.0:
-    resolution: {integrity: sha512-FaTrNiqc74KTUMI4KZ5CWWxR2oVTm/bEEik16NKz7usiUJXG4+Df2XA2SPAm+mG9bBY22NvBMM4IeBcUZFslyg==}
+  knip@6.12.0:
+    resolution: {integrity: sha512-nRg8+DOFcfBD6NjmNzu9+3D35QnEmMsnojJGOHQUqv+70r1aOx99wpSUXvEV7syQVOL5E6tNXXkoyG1Fuz8BWg==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
 
@@ -1602,7 +1602,7 @@ snapshots:
     dependencies:
       '@emnapi/core': 1.10.0
       '@emnapi/runtime': 1.10.0
-      '@tybys/wasm-util': 0.10.1
+      '@tybys/wasm-util': 0.10.2
     optional: true
 
   '@nodelib/fs.scandir@2.1.5':
@@ -1803,7 +1803,7 @@ snapshots:
 
   '@rolldown/pluginutils@1.0.0-rc.17': {}
 
-  '@tybys/wasm-util@0.10.1':
+  '@tybys/wasm-util@0.10.2':
     dependencies:
       tslib: 2.8.1
     optional: true
@@ -2185,7 +2185,7 @@ snapshots:
 
   isexe@2.0.0: {}
 
-  jiti@2.6.1: {}
+  jiti@2.7.0: {}
 
   joycon@3.1.1: {}
 
@@ -2202,12 +2202,12 @@ snapshots:
     optionalDependencies:
       graceful-fs: 4.2.11
 
-  knip@6.8.0(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0):
+  knip@6.12.0(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0):
     dependencies:
       fdir: 6.5.0(picomatch@4.0.4)
       formatly: 0.3.0
       get-tsconfig: 4.14.0
-      jiti: 2.6.1
+      jiti: 2.7.0
       minimist: 1.2.8
       oxc-parser: 0.128.0
       oxc-resolver: 11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)
@@ -2684,15 +2684,15 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vite-plugin-static-copy@4.1.0(vite@8.0.10(@types/node@25.6.0)(jiti@2.6.1)(yaml@2.8.3)):
+  vite-plugin-static-copy@4.1.0(vite@8.0.10(@types/node@25.6.0)(jiti@2.7.0)(yaml@2.8.3)):
     dependencies:
       chokidar: 3.6.0
       p-map: 7.0.4
       picocolors: 1.1.1
       tinyglobby: 0.2.16
-      vite: 8.0.10(@types/node@25.6.0)(jiti@2.6.1)(yaml@2.8.3)
+      vite: 8.0.10(@types/node@25.6.0)(jiti@2.7.0)(yaml@2.8.3)
 
-  vite@8.0.10(@types/node@25.6.0)(jiti@2.6.1)(yaml@2.8.3):
+  vite@8.0.10(@types/node@25.6.0)(jiti@2.7.0)(yaml@2.8.3):
     dependencies:
       lightningcss: 1.32.0
       picomatch: 4.0.4
@@ -2702,7 +2702,7 @@ snapshots:
     optionalDependencies:
       '@types/node': 25.6.0
       fsevents: 2.3.3
-      jiti: 2.6.1
+      jiti: 2.7.0
       yaml: 2.8.3
 
   walk-up-path@4.0.0: {}
