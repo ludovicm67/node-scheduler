@@ -26,7 +26,7 @@ jobs:
           cache: "pnpm"
           node-version: lts/*
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm ci
       - name: Run tests
         run: pnpm run test
 
@@ -50,7 +50,7 @@ jobs:
           cache: "pnpm"
           node-version: lts/*
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm ci
       - name: Run build
         run: pnpm run build
 
@@ -74,6 +74,6 @@ jobs:
           cache: "pnpm"
           node-version: lts/*
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm ci
       - name: Run knip
         run: pnpm run knip
