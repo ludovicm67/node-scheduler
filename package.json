@@ -47,7 +47,7 @@
     "@changesets/cli": "^2.31.0",
     "@types/express": "^5.0.6",
     "knip": "^6.13.1",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.2",
     "vite": "^8.0.10",
     "vite-plugin-static-copy": "^4.1.0"
   },
